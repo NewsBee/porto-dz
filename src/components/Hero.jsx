@@ -7,8 +7,8 @@ const codeLines = [
   "  role: 'Web Developer',",
   "  location: 'Indonesia',",
   "  since: 2022,",
-  "  experience: ['Educourse Intern', 'Freelance Projects'],",
-  "  focus: 'Websites, dashboards, and web apps',",
+  "  experience: ['Educourse Intern', 'Freelance Projects', 'Mobile App'],",
+  "  focus: 'Websites, dashboards, web apps',",
   "  contact: 'dzaki.zuh10@gmail.com'",
   '};',
 ];
