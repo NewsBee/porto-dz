@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock3, Send } from 'lucide-react';
 import { contacts } from '../data/contacts';
 
 function Contact() {
@@ -27,6 +27,18 @@ function Contact() {
           >
             Chat WhatsApp <ArrowRight size={18} />
           </a>
+
+          <div className="mt-6 flex max-w-md items-start gap-3 border border-[#1F2937] bg-[#111821] p-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#1F2937] bg-[#0B0F14] text-[#6EE7E0]">
+              <Clock3 size={18} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-[#F8FAFC]">Fast response for project briefs</p>
+              <p className="mt-1 text-sm leading-6 text-[#94A3B8]">
+                Kirim kebutuhan, referensi desain, atau target deadline agar diskusi lebih cepat.
+              </p>
+            </div>
+          </div>
         </div>
 
         <motion.div
@@ -36,6 +48,19 @@ function Contact() {
           transition={{ duration: 0.45 }}
           className="grid gap-3 sm:grid-cols-2"
         >
+          <a
+            href="mailto:dzaki.zuh10@gmail.com?subject=Project%20Inquiry%20-%20Portfolio"
+            className="group border border-[#6EE7E0]/60 bg-[#6EE7E0] p-5 text-[#0B0F14] transition hover:-translate-y-0.5 hover:bg-transparent hover:text-[#6EE7E0] sm:col-span-2"
+          >
+            <div className="mb-5 flex h-11 w-11 items-center justify-center border border-[#0B0F14]/20 bg-[#0B0F14] text-[#6EE7E0] transition group-hover:border-[#6EE7E0]">
+              <Send size={20} />
+            </div>
+            <p className="text-lg font-black">Start a project discussion</p>
+            <p className="mt-2 text-sm leading-6 text-[#0B0F14]/75 transition group-hover:text-[#94A3B8]">
+              Email langsung dengan subject project inquiry agar mudah saya follow up.
+            </p>
+          </a>
+
           {contacts.map((contact) => {
             const Icon = contact.icon;
 

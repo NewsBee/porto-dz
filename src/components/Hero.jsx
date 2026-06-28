@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2 } from 'lucide-react';
+import { ArrowRight, Code2, Send, Sparkles } from 'lucide-react';
 
 const codeLines = [
   'const profile = {',
@@ -30,6 +30,11 @@ function Hero() {
             // DZAKI ZUHDITIYA MAULANA
           </p>
 
+          <div className="mb-6 inline-flex items-center gap-2 border border-[#1F2937] bg-[#111821] px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#CBD5E1]">
+            <span className="h-2 w-2 rounded-full bg-[#22C55E] shadow-[0_0_12px_rgba(34,197,94,0.75)]" />
+            Available for freelance projects
+          </div>
+
           <h1 className="max-w-3xl text-6xl font-black leading-[0.92] tracking-normal text-[#F8FAFC] sm:text-7xl lg:text-8xl">
             Building
             <span className="block text-[#6EE7E0]">Web Apps</span>
@@ -57,6 +62,21 @@ function Hero() {
               Hubungi Saya
             </a>
           </div>
+
+          <div className="mt-10 grid max-w-xl grid-cols-3 border-y border-[#1F2937]">
+            {[
+              ['2022', 'Started'],
+              ['100+', 'Projects'],
+              ['Web', 'Focus'],
+            ].map(([value, label]) => (
+              <div key={label} className="border-r border-[#1F2937] py-4 last:border-r-0">
+                <p className="text-2xl font-black text-[#F8FAFC]">{value}</p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#64748B]">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
@@ -66,6 +86,10 @@ function Hero() {
           className="relative"
         >
           <div className="absolute -inset-4 border border-[#6EE7E0]/15" />
+          {/* <div className="absolute -right-3 -top-3 z-10 hidden border border-[#6EE7E0]/40 bg-[#0B0F14] px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-[#6EE7E0] shadow-xl shadow-black/30 sm:flex">
+            <Sparkles size={15} className="mr-2" />
+            Clean UI
+          </div> */}
           <div className="relative overflow-hidden border border-[#1F2937] bg-[#111821] shadow-2xl shadow-black/40">
             <div className="flex items-center justify-between border-b border-[#1F2937] px-5 py-4">
               <div className="flex items-center gap-2">
@@ -99,7 +123,28 @@ function Hero() {
                 ))}
               </code>
             </pre>
+
+            <div className="grid border-t border-[#1F2937] sm:grid-cols-3">
+              {['React', 'Django', 'WordPress'].map((tool) => (
+                <div
+                  key={tool}
+                  className="border-b border-[#1F2937] px-5 py-4 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                >
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#64748B]">
+                    Stack
+                  </p>
+                  <p className="mt-1 text-sm font-bold text-[#F8FAFC]">{tool}</p>
+                </div>
+              ))}
+            </div>
           </div>
+
+          <a
+            href="#contact"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 border border-[#1F2937] bg-[#0B0F14] px-5 py-3 text-sm font-bold text-[#F8FAFC] transition hover:border-[#6EE7E0] hover:text-[#6EE7E0]"
+          >
+            Request collaboration <Send size={17} />
+          </a>
         </motion.div>
       </div>
     </section>
