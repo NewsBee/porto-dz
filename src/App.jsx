@@ -9,7 +9,7 @@ import Skills from './components/Skills';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0B0F14] text-[#F8FAFC]">
+    <div className="min-h-screen overflow-x-hidden bg-[#0B0F14] text-[#F8FAFC]">
       <Navbar />
       <main>
         <Hero />

@@ -8,10 +8,10 @@ function Experience() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-[#6EE7E0]">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#6EE7E0] sm:text-xs sm:tracking-[0.28em]">
               // EXPERIENCE
             </p>
-            <h2 className="text-4xl font-black tracking-normal text-[#F8FAFC] sm:text-5xl">
+            <h2 className="text-3xl font-black tracking-normal text-[#F8FAFC] sm:text-5xl">
               Started in 2022,
               <span className="block text-[#6EE7E0]">kept building.</span>
             </h2>
@@ -31,12 +31,12 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.35, delay: index * 0.06 }}
-              className="border border-[#1F2937] bg-[#111821] p-6 transition hover:-translate-y-0.5 hover:border-[#6EE7E0]/70"
+              className="min-w-0 border border-[#1F2937] bg-[#111821] p-5 transition hover:-translate-y-0.5 hover:border-[#6EE7E0]/70 sm:p-6"
             >
               <div className="mb-6 flex h-11 w-11 items-center justify-center border border-[#1F2937] bg-[#0B0F14] text-[#6EE7E0]">
                 <BriefcaseBusiness size={20} />
               </div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6EE7E0]">
+              <p className="text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#6EE7E0] sm:text-xs sm:tracking-[0.2em]">
                 {experience.period}
               </p>
               <h3 className="mt-4 text-lg font-bold leading-7 text-[#F8FAFC]">
