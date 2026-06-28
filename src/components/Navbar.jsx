@@ -1,6 +1,5 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import Logo from './Logo';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -24,9 +23,20 @@ function Navbar() {
           onClick={closeMenu}
           aria-label="Kembali ke bagian utama"
         >
-          <Logo className="h-10 w-10 transition group-hover:brightness-125 group-hover:drop-shadow-[0_0_14px_rgba(110,231,224,0.28)]" />
-          <span className="hidden text-sm font-bold tracking-[0.18em] text-[#F8FAFC] transition group-hover:text-[#6EE7E0] sm:inline">
-            DZAKI
+          <span className="flex h-11 w-11 items-center justify-center border border-[#1F2937] bg-[#111821] p-1.5 transition group-hover:border-[#6EE7E0] group-hover:shadow-[0_0_18px_rgba(110,231,224,0.18)]">
+            <img
+              src="/dz-logo.svg"
+              alt="Dzaki logo"
+              className="h-full w-full object-contain"
+            />
+          </span>
+          <span className="hidden flex-col leading-none sm:flex">
+            <span className="text-sm font-bold tracking-[0.18em] text-[#F8FAFC] transition group-hover:text-[#6EE7E0]">
+              DZAKI
+            </span>
+            <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#64748B]">
+              Portfolio
+            </span>
           </span>
         </a>
 
