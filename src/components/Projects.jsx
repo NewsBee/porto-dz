@@ -1,0 +1,102 @@
+import { motion } from 'framer-motion';
+import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
+import { projects } from '../data/projects';
+
+function Projects() {
+  return (
+    <section id="projects" className="border-t border-[#1F2937] px-5 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-[#6EE7E0]">
+              // SELECTED PROJECTS
+            </p>
+            <h2 className="text-4xl font-black tracking-normal text-[#F8FAFC] sm:text-5xl">
+              Work Showcase
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-7 text-[#94A3B8]">
+            Pilihan project yang pernah saya kerjakan, baik sebagai pembuat utama maupun bagian
+            dari tim. Beberapa project bersifat publik, sementara sebagian lainnya adalah web app
+            private untuk kebutuhan internal client.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              className="group flex min-h-[410px] flex-col border border-[#1F2937] bg-[#111821] p-6 transition hover:-translate-y-1 hover:border-[#6EE7E0]/70"
+            >
+              <div className="mb-7 flex items-start justify-between gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#1F2937] bg-[#0B0F14] text-[#6EE7E0] transition group-hover:border-[#6EE7E0]">
+                  <ArrowUpRight size={22} />
+                </div>
+                <span className="border border-[#1F2937] bg-[#0B0F14] px-3 py-1.5 text-right text-[11px] font-bold uppercase tracking-[0.14em] text-[#6EE7E0]">
+                  {project.category}
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold leading-7 text-[#F8FAFC]">{project.title}</h3>
+              <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-[#6EE7E0]">
+                {project.role}
+              </p>
+              <p className="mt-4 flex-1 text-sm leading-7 text-[#94A3B8]">
+                {project.description}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border border-[#1F2937] bg-[#0B0F14] px-3 py-1.5 text-xs font-medium text-[#94A3B8]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-7 grid gap-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+                {project.liveUrl && project.liveUrl !== '#' ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 border border-[#6EE7E0]/70 px-4 py-2.5 text-sm font-bold text-[#6EE7E0] transition hover:bg-[#6EE7E0] hover:text-[#0B0F14]"
+                  >
+                    Visit Site <ExternalLink size={16} />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center justify-center border border-[#1F2937] px-4 py-2.5 text-sm font-bold text-[#64748B]">
+                    Private Demo
+                  </span>
+                )}
+
+                {project.sourceUrl ? (
+                  <a
+                    href={project.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 border border-[#1F2937] px-4 py-2.5 text-sm font-bold text-[#F8FAFC] transition hover:border-[#6EE7E0] hover:text-[#6EE7E0]"
+                  >
+                    Repository <Github size={16} />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center justify-center border border-[#1F2937] px-4 py-2.5 text-sm font-bold text-[#64748B]">
+                    Client Work
+                  </span>
+                )}
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Projects;

@@ -1,0 +1,66 @@
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { contacts } from '../data/contacts';
+
+function Contact() {
+  return (
+    <section id="contact" className="border-t border-[#1F2937] px-5 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-[#6EE7E0]">
+            // CONTACT
+          </p>
+          <h2 className="text-4xl font-black tracking-normal text-[#F8FAFC] sm:text-5xl">
+            Punya project?
+            <span className="block text-[#6EE7E0]">Mari diskusikan.</span>
+          </h2>
+          <p className="mt-6 max-w-md text-base leading-8 text-[#94A3B8]">
+            Saya terbuka untuk pembuatan website portfolio, landing page, dashboard admin,
+            sistem informasi sederhana, dan pengembangan aplikasi web berbasis kebutuhan.
+            Kirim pesan melalui WhatsApp atau email untuk mulai berdiskusi.
+          </p>
+          <a
+            href="https://wa.me/6287815180206"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center justify-center gap-2 border border-[#6EE7E0] bg-[#6EE7E0] px-6 py-3 text-sm font-bold text-[#0B0F14] transition hover:-translate-y-0.5 hover:bg-transparent hover:text-[#6EE7E0]"
+          >
+            Chat WhatsApp <ArrowRight size={18} />
+          </a>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.45 }}
+          className="grid gap-3 sm:grid-cols-2"
+        >
+          {contacts.map((contact) => {
+            const Icon = contact.icon;
+
+            return (
+              <a
+                key={contact.label}
+                href={contact.href}
+                target={contact.href.startsWith('http') ? '_blank' : undefined}
+                rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="group border border-[#1F2937] bg-[#111821] p-5 transition hover:-translate-y-0.5 hover:border-[#6EE7E0]/80"
+              >
+                <div className="mb-5 flex h-11 w-11 items-center justify-center border border-[#1F2937] bg-[#0B0F14] text-[#6EE7E0] transition group-hover:border-[#6EE7E0]">
+                  <Icon size={20} />
+                </div>
+                <p className="text-sm font-bold text-[#F8FAFC]">{contact.label}</p>
+                <p className="mt-2 break-words text-sm leading-6 text-[#94A3B8]">
+                  {contact.value}
+                </p>
+              </a>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default Contact;
